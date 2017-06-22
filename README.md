@@ -1,5 +1,12 @@
 
+Make sure you have install docker in your local environment :
+
+https://docs.docker.com/engine/installation/
+
+
 ## docker commands :
+
+Start dockerd with sudo dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
 
 ## build maven with docker
 
