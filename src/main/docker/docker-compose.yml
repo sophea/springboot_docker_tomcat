@@ -1,0 +1,6 @@
+version: '2'
+services:
+  tomcatwar:
+     image: sopheamak/springboot_docker_tomcat
+     ports:
+         - 8080
