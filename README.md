@@ -15,7 +15,7 @@ mvn clean package docker:build
 
 ## startup comtat webapp
 
-docker run --rm --name dockerwar -p 8080:8080  sopheamak/springboot_docker_tomcat
+docker run --rm --name dockerwar1 -p 8080:8080  sopheamak/springboot_docker_tomcat
 
 ##go and see inside docker container 
 

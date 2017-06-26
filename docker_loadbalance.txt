@@ -1,0 +1,22 @@
+ Start instance tomcat server1 from image : https://www.youtube.com/watch?v=Z3MWoPbV02s
+ 
+ server1 : dockerwar1 
+ docker run  --name dockerwar1 -d  sopheamak/springboot_docker_tomcat
+ 
+ 
+ server2 :  dockerwar2
+ 
+ docker run  --name dockerwar2 -d  sopheamak/springboot_docker_tomcat
+ 
+ 
+ 
+ - install nginx server load balance
+ 
+ >>docker run -it nginx bash
+ 
+ 
+ create own nginx conf : default.conf : see at ngix folder
+ 
+ >> start nginx with link server tomcat
+ 
+ docker run -d --link dockerwar1:tomcat1 --link dockerwar2:tomcat2 -v /home/sophea/docker_netbeans/NetBeansProjects/springboot_docker_tomcat/nginx/default.conf:/etc/nginx/conf.d/default.conf nginx --name nginx

@@ -1,5 +1,7 @@
 package com.sma.springboo;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,9 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Main extends SpringBootServletInitializer {
 
     @RequestMapping("/")
-    public List<String> home() {
-        return Arrays.asList("Update Springboot war deployment in Tomcat Docker container successfully");
+    public List<String> home() throws UnknownHostException {
+        return Arrays.asList(
+                "Update Springboot war deployment in Tomcat Docker container successfully",
+                InetAddress.getLocalHost().toString());
     }
+    
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
