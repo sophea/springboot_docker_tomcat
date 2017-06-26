@@ -24,3 +24,30 @@
  docker run -d --link dockerwar1:tomcat1 --link dockerwar2:tomcat2 -v /home/sophea/docker_netbeans/NetBeansProjects/springboot_docker_tomcat/nginx/default.conf:/etc/nginx/conf.d/default.conf nginx --name nginx
  
  ===next step with docker-compse==
+ 
+ 
+  go to nginx folder
+  cd /home/sophea/docker_netbeans/NetBeansProjects/springboot_docker_tomcat/nginx
+  
+  [sophea@sophea-ThinkPad-Edge-E440 nginx] (master) $ pwd
+/home/sophea/docker_netbeans/NetBeansProjects/springboot_docker_tomcat/nginx
+
+
+Then run command as below
+
+$docker-compose up &
+
+sophea@sophea-ThinkPad-Edge-E440 nginx] (master) $ sudo docker-compose up &
+[1] 30244
+[sophea@sophea-ThinkPad-Edge-E440 nginx] (master) $ docker ps
+CONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+c53a3768e5bb        nginx                                "nginx -g 'daemon off"   2 seconds ago       Up Less than a second   0.0.0.0:8080->80/tcp   nginx_portal_1
+2549b6b16bba        sopheamak/springboot_docker_tomcat   "sh -c 'java -Djava.s"   4 seconds ago       Up 2 seconds            8080/tcp               nginx_tomcat2_1
+adf9d1e0c6ec        sopheamak/springboot_docker_tomcat   "sh -c 'java -Djava.s"   4 seconds ago       Up 2 seconds            8080/tcp               nginx_tomcat1_1
+2dc63ffb05f3        sopheamak/springboot_docker_tomcat   "sh -c 'java -Djava.s"   4 seconds ago       Up 2 seconds            8080/tcp               nginx_tomcat3_1
+5ed6803353bf        docker/compose:1.13.0                "docker-compose up"      5 seconds ago       Up 4 seconds                                   agitated_jepsen
+
+
+
+
+    

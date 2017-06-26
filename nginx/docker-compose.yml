@@ -1,0 +1,18 @@
+portal:
+    image: nginx
+    ports:
+        - "8080:80"
+    volumes:
+        - /home/sophea/docker_netbeans/NetBeansProjects/springboot_docker_tomcat/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+        - tomcat1:tomcat1
+        - tomcat2:tomcat2
+        - tomcat3:tomcat3
+tomcat1:
+    image: sopheamak/springboot_docker_tomcat
+
+tomcat2:
+    image: sopheamak/springboot_docker_tomcat
+
+tomcat3:
+    image: sopheamak/springboot_docker_tomcat
