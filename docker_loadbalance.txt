@@ -14,9 +14,13 @@
  
  >>docker run -it nginx bash
  
+ ## stop it first
+ docker stop {containerid}
  
  create own nginx conf : default.conf : see at ngix folder
  
  >> start nginx with link server tomcat
  
  docker run -d --link dockerwar1:tomcat1 --link dockerwar2:tomcat2 -v /home/sophea/docker_netbeans/NetBeansProjects/springboot_docker_tomcat/nginx/default.conf:/etc/nginx/conf.d/default.conf nginx --name nginx
+ 
+ ===next step with docker-compse==
